@@ -86,12 +86,6 @@ img {
     margin-right: auto;
     max-width: 550px;
     height: auto;
-
-    grid-column-start: 1;
-    grid-column-end: 4;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
 }
 
 
