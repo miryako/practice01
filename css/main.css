@@ -99,7 +99,6 @@ img {
 .card-content a {
     color: aliceblue;
     position: relative;
-    z-index: 2;
 }
 
 .card-wrapper {
@@ -120,7 +119,6 @@ img {
     overflow: hidden;
     background-color: #7e2d2d;
     border-radius: 15px;
-    z-index: 2;
 }
 
 .card-list {
@@ -143,5 +141,4 @@ img {
     overflow: hidden;
     background-color: #7e2d2d;
     border-radius: 15px;
-    z-index: 2;
 }
