@@ -1,0 +1,54 @@
+section .data
+    N dd 5
+    result db 'Result: ', 0
+    newline db 10, 0
+
+section .bss
+    buf resb 10
+
+section .text
+    global _start
+
+_start:
+    mov eax, [N]
+    shl eax, 1
+    mov [N], eax
+
+    mov edi, buf
+    call int_to_string
+
+    mov eax, 1
+    mov edi, 1
+    mov rsi, result
+    mov edx, 8
+    syscall
+
+    mov eax, 1
+    mov edi, 1
+    mov rsi, buf
+    mov edx, 10
+    syscall
+
+    mov eax, 1
+    mov edi, 1
+    mov rsi, newline
+    mov edx, 1
+    syscall
+
+    mov eax, 60
+    xor edi, edi
+    syscall
+
+int_to_string:
+    mov ecx, 10
+    xor ebx, ebx
+convert_loop:
+    xor edx, edx
+    div ecx
+    add dl, '0'
+    mov [rdi], dl
+    inc rdi
+    test eax, eax
+    jnz convert_loop
+
+    ret
