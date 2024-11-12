@@ -142,3 +142,13 @@ img {
     background-color: #7e2d2d;
     border-radius: 15px;
 }
+
+.midleCard {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: #7e2d2d;
+    border-radius: 15px;
+}
